@@ -8,6 +8,12 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 
+#define DEFAULT 0
+#define EXT   1
+#define FNC   2
+#define SYM   3
+#define NUM   4
+
 
 &mt {
   //  flavor = "tap-preferred";
@@ -15,88 +21,52 @@
 };
 
 / {
+    keymap {
+        compatible = "zmk,keymap";
 
-    combos {
-        compatible = "zmk,combos";
-        combo_esc {
-            timeout-ms = <50>;
-            key-positions = <0 1>;
-            bindings = <&kp ESC>;
-        };
-
-         combo_tab {
-            timeout-ms = <50>;
-            key-positions = <10 11>;
-            bindings = <&kp TAB>;
-        };
-
-            combo_ralt {
-            timeout-ms = <50>;
-            key-positions = <17 16>;
-            bindings = <&kp RALT>;
-        };
-
-                    combo_lalt {
-            timeout-ms = <50>;
-            key-positions = <11 12>;
-            bindings = <&kp LALT>;
-        };
-
-                           combo_lgui {
-            timeout-ms = <50>;
-            key-positions = <12 13>;
-            bindings = <&kp LGUI>;
-        };
-
-
-       combo_rgui {
-            timeout-ms = <50>;
-            key-positions = <17 18>;
-            bindings = <&kp RGUI>;
-        };
-
-
-
-    };
-
-        keymap {
-                compatible = "zmk,keymap";
-
-            default_layer {
+        default_layer {
         bindings = <
-        &kp Q &kp W &kp E &kp R &kp T                       &kp Y &kp U  &kp I    &kp O   &kp P
-        &kp A &kp S &kp D &kp F &kp G                               &kp H &kp J &kp K &kp L &kp QUOT
-        &mt LSFT Z &kp X &kp C &kp V &kp B                      &kp N &kp M  &kp CMMA &kp DOT &mt LSFT RET
-                        &mo 1 &kp LCTL                  &kp SPC &mo 2
+            &kp Q, &kp W, &kp E, &kp R, &kp T,                          &kp Z, &kp U,  &kp I,    &kp O,   &kp P,
+            &mt LSHFT A, &mt LCTRL S, &mt LALT D, &mt LGUI F, &kp G,    &kp H, &kp J, &kp K, &kp L, &kp DQT,
+            &kp Y, &kp X, &kp C, &kp V, &kp B,                          &kp N, &kp M,  &kp COMMA, &kp DOT, &kp QMARK,
+            &lt FNC TAB,  &lt EXT SPACE,                                &lt SYM RET, &lt NUM BSPC,
         >;
         };
 
-            left_layer {
+        extended_layer {
         bindings = <
-        &kp NUM_1  &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5     &kp NUM_6 &kp NUM_7 &kp NUM_8 &kp NUM_9 &kp NUM_0
-        &kp TAB    &kp LC(S)    &kp DQT      &kp PIPE2     &kp HASH         &kp MINUS &kp EQL  &kp LBKT &kp RBKT  &kp DEL
-        &kp ESC    &kp TILDE    &kp NON_US_BSLH &kp NON_US_HASH  &kp TILDE2     &kp MINUS &kp GRAVE &kp LBKT &kp RBKT  &kp DEL
-                        &mo 1  &kp LGUI                     &kp RGUI &mo 2
+            &kp ESC, &trans, &trans, &trans, &trans,        &kp PG_UP, &kp PG_DN, &kp HOME, &kp END, &caps_word,
+            &trans, &trans, &trans, &trans, &trans,         &kp LEFT,&kp DOWN, &kp UP, &kp RIGHT, &kp DEL,
+            LG(Y), LG(X), CLG(C),  LG(V), &trans,           &trans, &trans, &trans, &trans, &kp PSCRN,
+            &trans, &trans,                                 &trans, &trans,
         >;
         };
 
-        right_layer {
+        function_layer {
         bindings = <
-        &kp BANG  &kp ATSN &kp HASH  &kp DLLR  &kp PRCT             &kp CRRT  &kp AMPS &kp KMLT &kp LPRN &kp RPRN
-        &kp HASH  &kp QMARK  &kp FSLH  &kp COLN  &kp SCLN           &kp MINUS &kp KP_EQUAL  &kp LBRC  &kp RBRC   &kp BKSP
-        &kp LSFT  &kp KPLS &kp LBKT &kp RBKT   &kp BSLH             &kp UNDER &kp LEFT &kp DOWN &kp UP  &kp RIGHT
-                      &mo 3 &kp LCTL                &kp SPC  &mo 2
+            &trans, &kp C_PREV, &kp C_PP, &kp C_NEXT, &trans,       &kp F12, &kp F7, &kp F8, &kp F9, &trans,
+            &trans, &trans, &trans, &trans, &trans,                 &kp F11, &kp F4, &kp F5, &kp F6, &trans,
+            &trans, &kp C_VOL_DN, &trans, &kp C_VOL_UP, &trans,     &kp F10, &kp F1, &kp F2, &kp F3, &trans,
+                                                &trans, &trans,     &trans, &trans,
         >;
         };
 
-        tri_layer {
+        symbol_layer {
         bindings = <
-        &kp NUM_1  &kp NUM_2    &kp NUM_3    &kp NUM_4    &kp NUM_5             &trans &trans   &trans   &trans  &trans
-        &kp F1 &kp F2 &kp F3 &kp F4 &kp F5                          &trans &kp PG_UP  &kp K_VOL_UP &kp K_MUTE &trans
-        &bt BT_CLR  &bt BT_NXT &bt BT_PRV &kp F6 &kp F7                 &trans &kp PG_DN  &kp K_VOL_DN  &trans &trans
-                     &trans &trans                      &trans &trans
+            &kp EXCL, &kp AT, &kp HASH, &kp DLLR, &kp LBKT,                             &kp RBKT, &kp PLUS, &kp ASTRK, &kp SLASH, &kp PRCNT,
+            &mt LSHFT AMPS, &mt LCTRL UNDER, &mt LALT DQT, &mt LGUI SQT, &kp LPAR,      &kp RPAR, &mt RGUI MINUS, &mt RALT LT, &mt RCTRL GT, &mt RSHFT SEMICOLON,
+            &kp PIPE, &kp TILDE, &kp CARET,  &kp GRAVE, &kp LBRC,                       &kp RBRC, &kp EQUAL, &kp COMMA, &kp DOT, &kp BSLH,
+                                                    &trans, &trans,                     &trans, &trans,
         >;
         };
 
+        numeric_layer {
+        bindings = <
+            &trans, &trans, &trans, &trans, &trans,             &trans, &kp KP_N7, &kp KP_N8, &kp KP_N9, &trans,
+            &trans, &trans, &trans, LGUI, &trans,               &trans, &kp KP_N4, &kp KP_N5, &kp KP_N6, &trans,
+            &trans, &trans, &trans, &kp COMMA, &kp DOT,         &kp KP_N0, &kp KP_N1, &kp KP_N2, &kp KP_N3, &trans,
+                                      &trans, &trans,           &trans, &trans,
+        >;
+        };
     };
 };
