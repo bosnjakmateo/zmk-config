@@ -1,42 +1,34 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+
     keymap {
         compatible = "zmk,keymap";
 
         base {
             bindings = <
-&kp Q        &kp W        &kp E       &kp R       &kp T    &kp Z  &kp U       &kp I       &kp O        &kp P
-&mt LSHFT A  &mt LCTRL S  &mt LALT D  &mt LGUI F  &kp G    &kp H  &mt RGUI J  &mt RALT K  &mt RCTRL L  &kp RIGHT_SHIFT
-&kp Y        &kp X        &kp C       &kp V       &kp B    &kp N  &kp M       &kp COMMA   &kp DOT      &none
-&lt 2 TAB    &lt 1 SPACE                                                                  &lt 4 RET    &lt 3 BACKSPACE
+&kp Q          &kp W        &kp E       &kp R       &kp T    &kp Z  &kp U       &kp I       &kp O        &kp P
+&mt LSHFT A    &mt LCTRL S  &mt LALT D  &mt LGUI F  &kp G    &kp H  &mt RGUI J  &mt RALT K  &mt RCTRL L  &kp RIGHT_SHIFT
+&kp Y          &kp X        &kp C       &kp V       &kp B    &kp N  &kp M       &kp COMMA   &kp DOT      &none
+&mt LSHFT TAB  &lt 1 SPACE                                                                  &lt 3 RET    &lt 2 BACKSPACE
+            >;
+        };
+
+        navigation {
+            bindings = <
+&kp ESC    &kp C_PREV    &kp C_PLAY_PAUSE  &kp C_NEXT    &trans    &kp PAGE_UP  &kp PAGE_DOWN  &kp HOME  &kp END    &trans
+&trans     &kp C_VOL_DN  &trans            &kp C_VOL_UP  &trans    &kp LEFT     &kp DOWN       &kp UP    &kp RIGHT  &kp DEL
+&kp LG(Z)  &kp LG(X)     &kp LG(C)         &kp LG(V)     &trans    &trans       &trans         &trans    &trans     &kp PRINTSCREEN
+&trans     &trans                                                                                        &trans     &trans
             >;
         };
 
         extended {
             bindings = <
-&kp ESC    &trans     &trans     &trans     &trans    &kp PAGE_UP  &kp PAGE_DOWN  &kp HOME  &kp END    &trans
-&trans     &trans     &trans     &trans     &trans    &kp LEFT     &kp DOWN       &kp UP    &kp RIGHT  &kp DEL
-&kp LG(Z)  &kp LG(X)  &kp LG(C)  &kp LG(V)  &trans    &trans       &trans         &trans    &trans     &kp PRINTSCREEN
-&trans     &trans                                                                           &trans     &trans
-            >;
-        };
-
-        function {
-            bindings = <
-&trans  &kp C_PREV        &kp LG(C_PLAY_PAUSE)  &kp C_NEXT    &trans    &kp F12  &kp F7  &kp F8  &kp F9  &trans
-&trans  &trans            &trans                &trans        &trans    &kp F11  &kp F4  &kp F5  &kp F6  &trans
-&trans  &kp LG(C_VOL_DN)  &trans                &kp C_VOL_UP  &trans    &kp F9   &kp F1  &kp F2  &kp F3  &trans
-&trans  &trans                                                                                   &trans  &trans
-            >;
-        };
-
-        numbers {
-            bindings = <
-&trans  &trans  &trans  &trans     &trans     &trans  &kp N7  &kp N8  &kp N9  &trans
-&trans  &trans  &trans  &kp LGUI   &trans     &trans  &kp N4  &kp N5  &kp N6  &trans
-&trans  &trans  &trans  &kp COMMA  &kp DOT    &kp N0  &kp N1  &kp N2  &kp N3  &trans
-&trans  &trans                                                        &trans  &trans
+&kp F12  &kp F7  &kp F8  &kp F9  &trans    &trans  &kp N7  &kp N8  &kp N9  &trans
+&kp F11  &kp F4  &kp F5  &kp F6  &trans    &trans  &kp N4  &kp N5  &kp N6  &kp COMMA
+&kp F9   &kp F1  &kp F2  &kp F3  &trans    &kp N0  &kp N1  &kp N2  &kp N3  &kp DOT
+&trans   &trans                                                    &trans  &trans
             >;
         };
 
