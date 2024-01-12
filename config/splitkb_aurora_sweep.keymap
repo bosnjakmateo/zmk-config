@@ -29,16 +29,16 @@
         base {
             bindings = <
 &kp Q          &kp W        &kp E       &kp R       &kp T    &kp Z  &kp U       &kp I       &kp O        &kp P
-&kp A          &mt LCTRL S  &mt LALT D  &mt LGUI F  &kp G    &kp H  &mt RGUI J  &mt RALT K  &mt RCTRL L  &trans
-&kp Y          &kp X        &kp C       &kp V       &kp B    &kp N  &kp M       &kp COMMA   &kp DOT      &hyper
-&mt LSHFT TAB  &lt 1 SPACE                                                                  &lt 3 RET    &lt 2 BACKSPACE
+&mt LSHFT A    &mt LCTRL S  &mt LALT D  &mt LGUI F  &kp G    &kp H  &mt RGUI J  &mt RALT K  &mt RCTRL L  &kp LSHFT
+&kp Y          &kp X        &kp C       &kp V       &kp B    &kp N  &kp M       &kp COMMA   &kp DOT      &trans
+&mt hyper TAB  &lt 1 SPACE                                                                  &lt 3 RET    &lt 2 BACKSPACE
             >;
         };
 
         navigation {
             bindings = <
 &kp ESC    &kp C_PREV          &kp C_PLAY_PAUSE  &kp C_NEXT         &trans    &kp PAGE_UP  &kp PAGE_DOWN  &kp HOME    &kp END       &caps_word
-&trans     &mt LCTRL C_VOL_DN  &trans            &mt LGUI C_VOL_UP  &trans    &kp LEFT     &kp DOWN       &kp UP      &kp RIGHT     &kp DEL
+&kp LSHFT  &mt LCTRL C_VOL_DN  &kp LALT          &mt LGUI C_VOL_UP  &trans    &kp LEFT     &kp DOWN       &kp UP      &kp RIGHT     &mt LSHFT DEL
 &kp LG(Z)  &kp LG(X)           &kp LG(C)         &kp LG(V)          &trans    &bt BT_CLR   &bt BT_PRV     &bt BT_NXT  &bt BT_SEL 0  &kp PRINTSCREEN
 &trans     &trans                                                                                                     &trans        &trans
             >;
@@ -46,19 +46,19 @@
 
         extended {
             bindings = <
-&kp F12  &kp F7        &kp F8       &kp F9       &trans    &trans  &kp N7  &kp N8  &kp N9  &trans
-&kp F11  &mt LCTRL F4  &mt LALT F5  &mt LGUI F6  &trans    &trans  &kp N4  &kp N5  &kp N6  &kp COMMA
-&kp F9   &kp F1        &kp F2       &kp F3       &trans    &kp N0  &kp N1  &kp N2  &kp N3  &kp DOT
-&trans   &trans                                                                    &trans  &trans
+&kp F12        &kp F7        &kp F8       &kp F9       &trans    &trans  &kp N7       &kp N8       &kp N9        &trans
+&mt LSHFT F11  &mt LCTRL F4  &mt LALT F5  &mt LGUI F6  &trans    &trans  &mt RGUI N4  &mt RALT N5  &mt RCTRL N6  &mt LSHFT COMMA
+&kp F9         &kp F1        &kp F2       &kp F3       &trans    &kp N0  &kp N1       &kp N2       &kp N3        &kp DOT
+&trans         &trans                                                                              &trans        &trans
             >;
         };
 
         symbols {
             bindings = <
-&kp EXCLAMATION  &kp AT_SIGN  &kp POUND  &kp DOLLAR  &kp LBKT    &kp RBKT  &kp PLUS   &kp ASTRK  &kp FSLH          &kp PRCNT
-&kp AMPS         &kp UNDER    &kp DQT    &kp SQT     &kp LPAR    &kp RPAR  &kp MINUS  &kp LT     &kp GREATER_THAN  &kp SEMI
-&kp PIPE         &kp TILDE    &kp CARET  &kp GRAVE   &kp LBRC    &kp RBRC  &kp EQUAL  &kp COMMA  &kp DOT           &kp BSLH
-&trans           &trans                                                                          &trans            &trans
+&kp EXCLAMATION  &kp AT_SIGN      &kp POUND     &kp DOLLAR    &kp LBKT    &kp RBKT  &kp PLUS        &kp ASTRK    &kp FSLH                &kp PRCNT
+&mt LSHFT AMPS   &mt LCTRL UNDER  &mt LALT DQT  &mt LGUI SQT  &kp LPAR    &kp RPAR  &mt RGUI MINUS  &mt RALT LT  &mt RCTRL GREATER_THAN  &mt LSHFT SEMI
+&kp PIPE         &kp TILDE        &kp CARET     &kp GRAVE     &kp LBRC    &kp RBRC  &kp EQUAL       &kp COMMA    &kp DOT                 &kp BSLH
+&trans           &trans                                                                                          &trans                  &trans
             >;
         };
     };
