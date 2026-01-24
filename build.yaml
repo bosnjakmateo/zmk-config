@@ -19,7 +19,7 @@
 #
 ---
 include:
-  - board: nrfmicro_11_flipped
+  - board: nrfmicro/nrf52840
     shield: splitkb_aurora_sweep_left
-  - board: nrfmicro_11_flipped
+  - board: nrfmicro/nrf52840
     shield: splitkb_aurora_sweep_right
