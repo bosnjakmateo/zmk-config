@@ -30,7 +30,7 @@
             bindings = <
 &kp Q          &kp W        &kp E       &kp R       &kp T    &kp Z  &kp U       &kp I       &kp O        &kp P
 &mt LSHFT A    &mt LCTRL S  &mt LALT D  &mt LGUI F  &kp G    &kp H  &mt RGUI J  &mt RALT K  &mt RCTRL L  &kp LSHFT
-&kp Y          &kp X        &kp C       &kp V       &kp B    &kp N  &kp M       &kp COMMA   &kp DOT      &lt &hyper RET
+&kp Y          &kp X        &kp C       &kp V       &kp B    &kp N  &kp M       &kp COMMA   &kp DOT      &lt hyper RET
 &kp TAB        &lt 1 SPACE                                                                  &lt 3 RET    &lt 2 BACKSPACE
             >;
         };
